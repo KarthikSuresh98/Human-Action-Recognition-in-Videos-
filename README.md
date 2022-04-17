@@ -31,3 +31,9 @@ $ python3 demo.py --video_loc 'test_videos/fall_dataset.avi' --api_token '<your 
 ~~~
 
 Link to a sample demo of the system : https://drive.google.com/file/d/194FPGYxm59BquJBVUoDKX5qo_5E3ddfF/view?usp=sharing
+
+
+#### References
+1. Dan Kondratyuk, Liangzhe Yuan, Yandong Li, Li Zhang, Mingxing Tan, Matthew Brown, Boqing Gong. MoViNets: Mobile Video Networks for Efficient Video Recognition. Computer Vision and Pattern Recognition (CVPR) , 2021
+2. Bogdan Kwolek, Michal Kepski, Human fall detection on embedded platform using depth maps and wireless accelerometer, Computer Methods and Programs in Biomedicine, Volume 117, Issue 3, December 2014, Pages 489-501, ISSN 0169-2607
+3. https://github.com/Atze00/MoViNet-pytorch
