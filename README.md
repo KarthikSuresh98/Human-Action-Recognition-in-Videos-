@@ -9,7 +9,9 @@ The use case we have explored is fall detection wherein the system is expected t
 
 #### Dataset
 The dataset used for training a fall detection system from MoViNets framework is UR fall detection dataset. Further preprocessing has been done to the datasetfor training the model.
+
 To download the original dataset use : http://fenix.univ.rzeszow.pl/~mkepski/ds/uf.html
+
 To download our version: https://drive.google.com/drive/folders/1kRO4sTQ11-q_XewxAuV7XmM15V95_1RT?usp=sharing
 
 #### Training the network
