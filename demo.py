@@ -2,7 +2,6 @@ from model import *
 import torch.nn as nn
 from config import _C
 
-from torchsummary import summary
 import torch
 import torch.nn.functional as F
 
