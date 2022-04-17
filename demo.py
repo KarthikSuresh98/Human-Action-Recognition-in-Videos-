@@ -24,7 +24,6 @@ args = parser.parse_args()
 def pushbullet_message(title, body):
     msg = {"type": "note", "title": title, "body": body}
     TOKEN = args.api_token
-    #'o.s6iQjRHTbcKKrNlOr9u2MSCYqN96o2sD'
     resp = requests.post('https://api.pushbullet.com/v2/pushes', 
                          data=json.dumps(msg),
                          headers={'Authorization': 'Bearer ' + TOKEN,
