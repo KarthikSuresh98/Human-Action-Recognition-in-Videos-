@@ -81,7 +81,7 @@ def main():
 
       print('\n----------------------------------------------\n')
       print('saving net...')
-      torch.save(model.state_dict(), 'network_' + str(epoch) + '.pth')    
+      torch.save(model.state_dict(), 'weights/network_' + str(epoch) + '.pth')    
       
       model.eval()
       model.clean_activation_buffers()
@@ -105,8 +105,8 @@ def main():
 
               avg_test_loss = avg_test_loss + loss.data
           
-          print(F.softmax(out, dim = 1))
-          print('\n')
+          prediction = F.softmax(out, dim = 1)
+          print(torch.argmax(prediction))
 
           #clean the buffer of activations
           model.clean_activation_buffers()  

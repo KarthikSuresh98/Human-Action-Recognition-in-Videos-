@@ -44,6 +44,7 @@ class Dataset(torch.utils.data.Dataset):
       augmentation = random.randint(1,8)
   
       if self.train == False:
+        print(img_name)
         augmentation = 8
 
       aug = DataAugment()
