@@ -7,6 +7,13 @@ recognition system in a day-to-day life.
 The use case we have explored is fall detection wherein the system is expected to raise an alert whenever a fall is detected. The model we have chosen to understand deeply and implement is MoViNets, a family of networks which is computation and memory efficient. The model pretrained on the Kinetics-600 dataset is further trained using the UR fall detection dataset to help the model understand fall and other daily life activities. In the simple system we have implemented, given an input video, if the trained model detects a fall in the video, alert messages are triggered and sent to registered devices to notify the same.
 
 
+#### Requirements
+1. torch 1.10.0 with appropriate cuda distribution
+2. Opencv2
+3. einops
+4. fvcore
+
+
 #### Dataset
 The dataset used for training a fall detection system from MoViNets framework is UR fall detection dataset. Further preprocessing has been done to the datasetfor training the model.
 
@@ -32,6 +39,7 @@ $ python3 demo.py --video_loc 'test_videos/fall_dataset.avi' --api_token '<your 
 
 Link to a sample demo of the system : https://drive.google.com/file/d/194FPGYxm59BquJBVUoDKX5qo_5E3ddfF/view?usp=sharing
 
+Note : The trained weights (weights/fall_weights.pth) on the UR fall detection dataset is trained using gpu. 
 
 #### References
 1. Dan Kondratyuk, Liangzhe Yuan, Yandong Li, Li Zhang, Mingxing Tan, Matthew Brown, Boqing Gong. MoViNets: Mobile Video Networks for Efficient Video Recognition. Computer Vision and Pattern Recognition (CVPR) , 2021
