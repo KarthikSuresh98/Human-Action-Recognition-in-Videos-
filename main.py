@@ -17,6 +17,8 @@ def main():
   
     num_epochs = 5
 
+    device = 'cuda:0' if torch.cuda.is_available() else 'cpu'  
+
     model = MoViNet(_C.MODEL.MoViNetA2, causal = False, pretrained = True)
     model.classifier[3] = ConvBlock3D(2048,
                             2,
@@ -37,7 +39,7 @@ def main():
     total_train_images = dataset_train.__len__()
     total_test_images = dataset_test.__len__()
 
-    model.cuda()
+    model.to(device=device)
     for epoch in range(num_epochs):
 
       model.train()
@@ -56,8 +58,8 @@ def main():
 
           num_clips = int(input_video.shape[2]/num_frames_per_clip)
 
-          input_video = input_video.cuda()
-          target = target.cuda()
+          input_video = input_video.to(device=device)
+          target = target.to(device=device)
           
           for j in range(num_clips):
             frame = input_video[:, :, j*num_frames_per_clip:(j+1)*num_frames_per_clip]
@@ -94,8 +96,8 @@ def main():
                     
           input_video = rearrange(torch.from_numpy(all_frames.numpy()), "b t h w c-> b c t h w")
 
-          input_video = input_video.cuda()
-          target = target.cuda()
+          input_video = input_video.to(device=device)
+          target = target.to(device=device)
 
 
           for j in range(input_video.shape[2]):

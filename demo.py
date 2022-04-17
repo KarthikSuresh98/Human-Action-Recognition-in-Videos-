@@ -48,6 +48,8 @@ def main():
                               conv_type="3d",
                               bias=True)
     
+      device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+
       cap = cv2.VideoCapture(args.video_loc)
       # Check if camera opened successfully
       if (cap.isOpened()== False): 
@@ -70,9 +72,9 @@ def main():
       all_frames = rearrange(torch.from_numpy(all_frames.numpy()), "b t h w c-> b c t h w")
 
 
-      all_frames = all_frames.cuda()
+      all_frames = all_frames.to(device=device)
 
-      model.cuda()
+      model.to(device=device)
       model.load_state_dict(torch.load('weights/fall_weights.pth'))
 
       model.eval()
